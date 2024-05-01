@@ -1,0 +1,8 @@
+node_modules
+lib
+dist
+coverage
+AOTP11/lib/**
+AOTP11/endtoend/*/build
+examples/svelte-example/public/build/
+bundle-legacy.js
