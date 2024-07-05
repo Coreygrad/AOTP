@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  AOTP11:
+    image: transloadit/companion
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules
+      - /mnt/AOTP11-server-data:/mnt/AOTP11-server-data
+    ports:
+      - '3020:3020'
+    env_file:
+      - .env
