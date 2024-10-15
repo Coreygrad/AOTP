@@ -1,0 +1,21 @@
+{
+  "name": "@AOTP11-example/AOTP11-with-companion",
+  "version": "0.0.0",
+  "dependencies": {
+    "@AOTP11/companion": "workspace:*",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "light-server": "^2.4.0",
+    "upload-server": "^1.1.6"
+  },
+  "license": "ISC",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "client": "light-server -p 3000 -s client",
+    "server": "node ./server/index.js",
+    "start": "yarn run server & yarn run client",
+    "AOTP11": "echo \"Error: no AOTP11 specified\" && exit 1"
+  }
+}
