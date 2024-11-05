@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@AOTP11/core/dist/style.css';
+@import '@AOTP11/dashboard/dist/style.css';
+@import '@AOTP11/drag-drop/dist/style.css';
+@import '@AOTP11/progress-bar/dist/style.css';
