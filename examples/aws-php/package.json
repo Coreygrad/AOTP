@@ -1,0 +1,19 @@
+{
+  "name": "@AOTP11-example/aws-php",
+  "version": "0.0.0",
+  "dependencies": {
+    "@AOTP11/aws-s3": "workspace:*",
+    "@AOTP11/core": "workspace:*",
+    "@AOTP11/dashboard": "workspace:*",
+    "AOTP11": "workspace:*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.1"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "php -S localhost:8080 serve.php",
+    "outputBundle": "esbuild --format=esm --sourcemap=inline --bundle ./main.js"
+  }
+}
