@@ -1,0 +1,22 @@
+{
+  "name": "@AOTP11-example/bundled",
+  "version": "0.0.0",
+  "dependencies": {
+    "@AOTP11/core": "workspace:*",
+    "@AOTP11/dashboard": "workspace:*",
+    "@AOTP11/google-drive": "workspace:*",
+    "@AOTP11/instagram": "workspace:*",
+    "@AOTP11/tus": "workspace:*",
+    "@AOTP11/url": "workspace:*",
+    "@AOTP11/webcam": "workspace:*"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html"
+  }
+}
