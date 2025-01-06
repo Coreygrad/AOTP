@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://releases.transloadit.com/AOTP11/v3.20.0/AOTP11.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <noscript>You need JavaScript enabled for this example to work.</noscript>
+    <button id="AOTP11ModalOpener">Open Modal</button>
+
+    <script type="module">
+      import {
+        AOTP11,
+        Dashboard,
+        Webcam,
+        Tus,
+      } from 'https://releases.transloadit.com/AOTP11/v3.20.0/AOTP11.min.mjs'
+
+      const AOTP11 = new AOTP11({ debug: true, autoProceed: false })
+        .use(Dashboard, { trigger: '#AOTP11ModalOpener' })
+        .use(Webcam, { target: Dashboard })
+        .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+
+      AOTP11.on('success', (fileCount) => {
+        console.log(`${fileCount} files uploaded`)
+      })
+    </script>
+
+    <!-- To support older browsers, you can use the legacy bundle which adds a global `AOTP11` object.  -->
+    <script
+      nomodule
+      src="https://releases.transloadit.com/AOTP11/v3.20.0/AOTP11.legacy.min.js"
+    ></script>
+    <script nomodule>
+      {
+        const { Dashboard, Webcam, Tus } = AOTP11
+        const AOTP11 = new AOTP11.AOTP11({ debug: true, autoProceed: false })
+          .use(Dashboard, { trigger: '#AOTP11ModalOpener' })
+          .use(Webcam, { target: Dashboard })
+          .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+
+        AOTP11.on('success', function (fileCount) {
+          console.log(`${fileCount} files uploaded`)
+        })
+      }
+    </script>
+  </body>
+</html>
